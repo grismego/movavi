@@ -1,0 +1,29 @@
+.make {
+  @media (min-width: $tablet-width) {
+    padding-bottom: 40px;
+  }
+
+  .make__title {
+    @include textbold(28px, 38px);
+    text-align: center;
+  }
+
+  .make__text {
+    @include textregular(16px, 26px);
+  }
+
+  .make__btn-block {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+  }
+}

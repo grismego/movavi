@@ -1,0 +1,150 @@
+.step {
+  counter-reset: steps__list-item;
+
+  .step__item-counter {
+    position: relative;
+    @include textbold(24px, 34px);
+    @media (min-width: $tablet-width) {
+      width: 100%;
+      margin: 0;
+      // padding: 20px 0;
+      &--first {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: -1px;
+        top: -12px;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #bdbdbd;
+        border-radius: 50%;
+        left: -27px;
+        top: 11px;
+      }
+    }
+    @media (min-width: $desktop-width) {
+      font-size: 34px;
+      line-height: 40px;
+    }
+
+    &::before {
+      counter-increment: steps__list-item;
+      content: counters(steps__list-item, ".") ". ";
+      display: inline;
+      color: #f68263;
+    }
+  }
+
+  .step__item-text {
+    @include textregular(16px, 26px);
+    color: #242927;
+    @media (min-width: $tablet-width) {
+      width: 45%;
+      order: 2;
+      margin-bottom: 0;
+
+      &--row {
+        width: 100%;
+        clear: both;
+      }
+    }
+    @media (min-width: $desktop-width) {
+      font-size: 20px;
+      line-height: 30px;
+      width: 50%;
+
+      &--row {
+        width: 100%;
+      }
+    }
+  }
+
+  .step__item {
+    @media (min-width: $tablet-width) {
+      padding-left: 20px;
+      border-left: 2px solid #bdbdbd;
+      padding-bottom: 30px;
+      padding-top: 20px;
+
+      &--tabs {
+        padding-bottom: 120px;
+      }
+
+      &--first-tab {
+        padding-top: 30px;
+      }
+
+      &--first {
+        padding-top: 0;
+      }
+
+      &--last {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          background-color: #bdbdbd;
+          border-radius: 50%;
+          left: -7px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  .step__item-img {
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    @media (min-width: $tablet-width) {
+      width: 344px;
+      float: right;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: $desktop-width) {
+      width: 457px;
+    }
+  }
+
+  .step__item-anchor {
+    @include textregular(16px, 20px);
+    color: #3581d5;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 208px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    text-decoration: none;
+    clear: both;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      left: 0;
+      top: 6px;
+      background: url("../img/arrow.png") no-repeat;
+    }
+  }
+}
