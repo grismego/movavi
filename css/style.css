@@ -166,7 +166,7 @@ img {
   .btn .btn__download-logo--win {
     background: url("../img/windows_logo.png") no-repeat center; }
   .btn .btn__download-logo--mac {
-    background: url("../img/mac_logo_grey.png") no-repeat center; }
+    background: url("../img/mac_logo_grey.png") no-repeat 9px 3px; }
 
 @media (min-width: 1140px) {
   .btn .btn__download-mob {
